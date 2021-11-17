@@ -13,7 +13,7 @@ use OCP\Migration\SimpleMigrationStep;
 /**
  * Auto-generated migration step: Please modify to your needs!
  */
-class Version000001Date20211117102042 extends SimpleMigrationStep
+class Version000001Date20211117102055 extends SimpleMigrationStep
 {
 	/** @var IDBConnection */
 	protected $db;
@@ -34,31 +34,13 @@ class Version000001Date20211117102042 extends SimpleMigrationStep
 		/** @var ISchemaWrapper */
 		$schema = $schemaClosure();
 
-		if (!$schema->hasTable('migration_test_users')) {
-			$table = $schema->createTable('migration_test_users');
-			$table->addColumn('user_id', 'integer', [
+		if ($schema->hasTable('migration_test_users')) {
+			$table = $schema->getTable('migration_test_users');
+			$table->addColumn('user_status', 'integer', [
+				'columnDefinition' => 'VARCHAR(50) NULL DEFAULT NULL AFTER password',
 				'notnull' => true,
 				'autoincrement' => true,
 			]);
-
-			$table->addColumn('username', 'string', [
-				'notnull' => true,
-				'length' => 10,
-				'default' => '',
-			]);
-
-			$table->addColumn('password', 'string', [
-				'notnull' => true,
-				'length' => 10,
-				'default' => '',
-			]);
-
-			$table->addColumn('status', 'boolean', [
-				'notnull' => true,
-				'default' => true,
-			]);
-
-			$table->setPrimaryKey(['user_id']);
 		}
 
 		return $schema;
