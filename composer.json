@@ -1,0 +1,15 @@
+{
+    "name": "Test Migration Skeleton App",
+    "description": "This app is to test the migrations with the new nextcloud version.",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Kshitij Sharma"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}
