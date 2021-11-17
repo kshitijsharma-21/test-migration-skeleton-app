@@ -1,18 +1,20 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>testmigrationskeletonapp</id>
+    <id>test-migration-skeleton-app</id>
     <name>Test Migration Skeleton App</name>
     <summary>This app is to test the migrations with the new nextcloud version.</summary>
     <description><![CDATA[This app is use to check the issues with the new migration run on enabling the app.]]></description>
     <version>0.0.1</version>
     <licence>agpl</licence>
-    <author mail="kshtjsharma9@gmail.com" >Kshitij Sharma</author>
+    <author mail="kshitij.s@omsosys.co" >Kshitij Sharma</author>
     <namespace>TestMigrationSkeletonApp</namespace>
     <category>customization</category>
     <bugs>https://github.com/nextcloud/server/issues/29745</bugs>
     <dependencies>
-        <nextcloud min-version="15" max-version="15"/>
+		<php min-version="7.3"/>
+		<database min-version="5.6">mysql</database>
+		<nextcloud min-version="21" max-version="21"/>
     </dependencies>
     <navigations>
         <navigation>
